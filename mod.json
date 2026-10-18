@@ -6,12 +6,65 @@
 		"mac": "2.2081",
 		"ios": "2.2081"
 	},
-	"id": "$MOD_ID",
-	"name": "$MOD_NAME",
-	"version": "$MOD_VERSION",
-	"developer": "$MOD_DEVELOPER",
-	"description": "$MOD_DESCRIPTION",
+	"id": "sub2sabz.runrecorder",
+	"name": "GD_Run_Recorder",
+	"version": "v1.0.0",
+	"developer": "Sub_2_Sabz",
+	"description": "A run recorder that saves your successful runs as videos.",
 	"dependencies": {
 		"geode.node-ids": ">=v1.23.3"
+	},
+	"settings": {
+		"auto-record": {
+			"type": "bool",
+			"name": "Auto-record runs",
+			"description": "Record every attempt. Deaths are deleted, successful runs are kept.",
+			"default": true
+		},
+		"save-percent": {
+			"type": "int",
+			"name": "Save at % (normal runs)",
+			"description": "Keep a run once it reaches this percent. 100 = only completions.",
+			"default": 100,
+			"min": 1,
+			"max": 100,
+			"control": { "input": true, "slider": true }
+		},
+		"startpos-save-percent": {
+			"type": "int",
+			"name": "Save at % (start pos runs)",
+			"description": "Same, but for attempts that begin from a start pos. Set it to where your section ends.",
+			"default": 100,
+			"min": 1,
+			"max": 100,
+			"control": { "input": true, "slider": true }
+		},
+		"record-practice": {
+			"type": "bool",
+			"name": "Record in practice mode",
+			"default": false
+		},
+		"video-height": {
+			"type": "int",
+			"name": "Video height",
+			"description": "Lower = smoother game on weak phones. 480 is a good start.",
+			"default": 480,
+			"min": 240,
+			"max": 1080
+		},
+		"fps": {
+			"type": "int",
+			"name": "Video FPS",
+			"default": 30,
+			"min": 15,
+			"max": 60
+		},
+		"bitrate-kbps": {
+			"type": "int",
+			"name": "Bitrate (kbps)",
+			"default": 4000,
+			"min": 1000,
+			"max": 20000
+		}
 	}
 }
